@@ -1,11 +1,5 @@
 // Function implementation
-const assertEqual = function(actual, expected) {
-  if (actual === expected) {
-    console.log(`Assertion Passed: ${actual} === ${expected}`);
-  } else {
-    console.log(`Assertion Failed: ${actual} !== ${expected}`);
-  }
-};
+const assertEqual = require('./assertEqual');
 
 const eqArrays = function(arr1, arr2) {
 
@@ -21,8 +15,5 @@ const eqArrays = function(arr1, arr2) {
   }
   return true;
 };
-  // Test code
 
-assertEqual(eqArrays([1, 2, 3], [1, 2, 3]), true);
-assertEqual(eqArrays([1, 2, 3], [1, 21, 3]), true);
-assertEqual(eqArrays([1, 2, 3], [1, 2, 3, 5]), false);
+module.exports = eqArrays;
